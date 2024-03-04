@@ -1,17 +1,12 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { Separator } from "./components/Separator/Separator";
-import { Button } from "./components/Button/Button";
+import { NavigationContainer } from "@react-navigation/native";
+import { Tabs } from "./components/Tabs/Tabs";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={require("./assets/logo.png")} />
-      <Separator />
-      <Text> Hello World </Text>
-      <StatusBar style="auto" />
-      <Button text="Hello" />
-    </View>
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
   );
 }
 
