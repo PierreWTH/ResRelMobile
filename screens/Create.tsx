@@ -9,10 +9,3 @@ export default function Create() {
     </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  h1: {
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-});
