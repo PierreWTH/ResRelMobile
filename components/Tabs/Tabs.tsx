@@ -4,7 +4,7 @@ import Home from "../../screens/Home";
 import { Separator } from "../Separator/Separator";
 import { FontAwesome } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import Create from "../../screens/Create";
 type TabsType = {
   Home: undefined;
 };
@@ -25,7 +25,7 @@ export function Tabs() {
       />
       <Tab.Screen
         name="Create"
-        component={Separator}
+        component={Create}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialIcons name="post-add" color={color} size={size} />

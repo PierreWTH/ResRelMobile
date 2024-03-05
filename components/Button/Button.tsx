@@ -3,24 +3,17 @@ import { useState } from "react";
 import { Text, StyleSheet, Pressable, View } from "react-native";
 
 interface ButtonProps {
-  color?: string;
-  text: string;
+  backgroundColor?: string;
+  label: string;
 }
 export const Button: React.FunctionComponent<ButtonProps> = ({
-  color = "#red",
-  text = "Press me",
+  backgroundColor = "#red",
+  label = "Press me",
 }) => {
-  const [count, setCount] = useState(0);
-
-  const onPress = () => {
-    setCount(count + 1);
-  };
-
   return (
     <View>
-      <Text>{count}</Text>
-      <Pressable style={styles.button} onPress={onPress}>
-        <Text style={styles.text}>{text}</Text>
+      <Pressable style={[styles.button, { backgroundColor }]}>
+        <Text style={styles.text}>{label}</Text>
       </Pressable>
     </View>
   );
@@ -28,7 +21,6 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "blue",
     padding: 10,
     borderRadius: 10,
   },

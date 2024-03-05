@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 interface ItemListProps {
   items?: Array<Item>;
@@ -58,7 +58,7 @@ export const ItemList: React.FunctionComponent<ItemListProps> = ({
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   list: {
     width: "100%",
     flexDirection: "column",
@@ -75,4 +75,4 @@ const styles = {
     fontSize: 14,
     marginBottom: 10,
   },
-};
+});
