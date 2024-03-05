@@ -1,17 +1,18 @@
 import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
 import { ItemList } from "../components/ItemList/ItemList";
+import { Container } from "../components/Layout/Container";
 
 export default function Home() {
   return (
     <ScrollView>
-      <View style={styles.container}>
+      <Container>
         <View style={styles.header}>
           <Image style={styles.image} source={require("../assets/logo.png")} />
           <Text>Bienvenue sur votre application Ressource Relationnelle !</Text>
         </View>
         <Text style={styles.h2}>Les dernieres ressources publiées : </Text>
         <ItemList />
-      </View>
+      </Container>
     </ScrollView>
   );
 }
