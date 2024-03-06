@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import { Item } from "../components/Item/Item";
+import axios from "axios";
 
 interface dataProps {
   title: string;
@@ -16,9 +17,10 @@ export default function Home() {
   }, []);
 
   async function fetchAPI() {
-    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const json = await response.json();
-    setData(json);
+    const data = await axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.data);
+    setData(data);
   }
 
   return (

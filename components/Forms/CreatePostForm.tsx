@@ -6,13 +6,12 @@ import { useState } from "react";
 export default function CreatePostForm() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const [display, setDisplay] = useState(false);
 
-  function handleForm(title: string, body: string) {
+  async function handleForm(title: string, body: string) {
     if (title === "" || body === "") {
       Alert.alert("Erreur", "Veuillez remplir tous les champs");
     }
-    console.log(title, body);
+    // TODO : make a post request to API to create a new post
   }
 
   return (
