@@ -1,16 +1,42 @@
-import { StyleSheet, Text, View, Image, ScrollView } from "react-native";
+import { StyleSheet, Text, View, Alert } from "react-native";
 import { InputText } from "../InputText/InputText";
 import { Button } from "../Button/Button";
+import { useState } from "react";
 
 export default function CreatePostForm() {
-  function handleForm() {}
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [display, setDisplay] = useState(false);
+
+  function handleForm(title: string, body: string) {
+    if (title === "" || body === "") {
+      Alert.alert("Erreur", "Veuillez remplir tous les champs");
+    }
+    console.log(title, body);
+  }
 
   return (
     <View>
       <Text style={styles.h1}>Créer un post</Text>
-      <InputText label="Titre : " />
-      <InputText height={150} label="Contenu : " />
-      <Button label="Créer" backgroundColor="black" />
+      <InputText
+        label="Titre : "
+        placeholder="Titre du post"
+        onChange={(text) => setTitle(text)}
+        value={title}
+      />
+      <InputText
+        height={150}
+        label="Contenu : "
+        placeholder="Contenu du post"
+        multiline
+        onChange={(text) => setBody(text)}
+        value={body}
+      />
+      <Button
+        label="Créer"
+        backgroundColor="black"
+        onPress={() => handleForm(title, body)}
+      />
     </View>
   );
 }

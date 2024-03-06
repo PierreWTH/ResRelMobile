@@ -5,14 +5,16 @@ import { Text, StyleSheet, Pressable, View } from "react-native";
 interface ButtonProps {
   backgroundColor?: string;
   label: string;
+  onPress?: () => void;
 }
 export const Button: React.FunctionComponent<ButtonProps> = ({
   backgroundColor = "#red",
   label = "Press me",
+  onPress,
 }) => {
   return (
     <View>
-      <Pressable style={[styles.button, { backgroundColor }]}>
+      <Pressable style={[styles.button, { backgroundColor }]} onPress={onPress}>
         <Text style={styles.text}>{label}</Text>
       </Pressable>
     </View>

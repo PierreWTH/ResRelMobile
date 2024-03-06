@@ -12,6 +12,9 @@ export const Container: React.FunctionComponent<ContainerProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
+    flex: 1,
+    backgroundColor: "#fff",
+    padding: 20,
+    alignItems: "center",
   },
 });
