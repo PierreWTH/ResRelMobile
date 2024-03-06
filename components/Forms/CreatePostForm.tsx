@@ -3,6 +3,8 @@ import { InputText } from "../InputText/InputText";
 import { Button } from "../Button/Button";
 
 export default function CreatePostForm() {
+  function handleForm() {}
+
   return (
     <View>
       <Text style={styles.h1}>Créer un post</Text>

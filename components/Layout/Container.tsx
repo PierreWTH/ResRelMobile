@@ -13,10 +13,5 @@ export const Container: React.FunctionComponent<ContainerProps> = ({
 const styles = StyleSheet.create({
   container: {
     height: "100%",
-    backgroundColor: "#fff",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: 20,
-    gap: 20,
   },
 });
